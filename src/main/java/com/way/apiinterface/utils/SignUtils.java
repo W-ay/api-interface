@@ -1,0 +1,18 @@
+package com.way.apiinterface.utils;
+
+import cn.hutool.crypto.digest.DigestAlgorithm;
+import cn.hutool.crypto.digest.Digester;
+
+import java.util.HashMap;
+
+/**
+ * @author Way
+ */
+public class SignUtils {
+    private static final Long DELAY = (long) (1000 * 60 * 5);
+
+    public static String getSign(HashMap<String, String> map, String appSecret, Object body) {
+        Digester digester = new Digester(DigestAlgorithm.SHA256);
+        return digester.digestHex(map.toString() + "." + appSecret + "." + body);
+    }
+}
