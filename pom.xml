@@ -41,7 +41,11 @@
             <artifactId>hutool-all</artifactId>
             <version>5.8.15</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.way</groupId>
+            <artifactId>dubbo-interface</artifactId>
+            <version>0.0.1</version>
+        </dependency>
         <!-- 集成redis依赖  -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
