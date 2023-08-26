@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 /**
@@ -26,17 +27,19 @@ public class PhotosController {
     String dir = new String("F:\\图片\\animation");
 
 
-    @GetMapping("/{fileName}")
-    public void getPhoto(@PathVariable String fileName , HttpServletResponse response) throws IOException, InterruptedException {
+    @GetMapping
+    public void getPhoto(HttpServletResponse response) throws IOException, InterruptedException {
         ServletOutputStream outputStream = response.getOutputStream();
+        //todo add cache
         List<String> list = getAllFile(dir, true);
-        //todo 返回随机一个图片
         String randomFileName = list.get(RandomUtil.randomInt(0, list.size()));
         FileInputStream fis = new FileInputStream(randomFileName);
+
         byte[] bytes = new byte[1024];
         int len;
         while ((len = fis.read(bytes))>=0) {
             outputStream.write(bytes,0,len);
+//            outputStream.write(Base64.getEncoder().encode(bytes),0,len);
         }
         fis.close();
         log.info("文件..."+randomFileName);

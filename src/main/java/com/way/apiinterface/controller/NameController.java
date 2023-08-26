@@ -52,7 +52,7 @@ public class NameController {
     }
 
     @PostMapping
-    private String getNameByPost(@RequestParam String username) {
+    private String getNameByPost(@RequestBody String username) {
         return "POST PARAM  " + username;
     }
 

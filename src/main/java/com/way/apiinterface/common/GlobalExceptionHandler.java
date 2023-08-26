@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Arrays;
+
 /**
  * 全局异常处理器
  *
@@ -24,6 +26,18 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(CustomException.class)
     public String handleDuplicate(CustomException ex) {
+        return ex.getMessage();
+    }
+    /**
+     * 处理自定义异常
+     *
+     * @param ex
+     * @return
+     */
+    @ExceptionHandler(Exception.class)
+    public String handleGlobal(Exception ex) {
+        log.error(ex.getMessage());
+        log.error(Arrays.toString(ex.getStackTrace()));
         return ex.getMessage();
     }
 

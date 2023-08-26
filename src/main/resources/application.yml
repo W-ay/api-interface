@@ -1,7 +1,8 @@
 server:
   servlet:
-    context-path: /api
+    context-path: /api2
   port: 8123
+
 spring:
   redis:
     host: localhost
