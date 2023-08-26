@@ -27,7 +27,7 @@ public class NameController {
     private final String TABLE = "name_nonce";
 
     @GetMapping("/nonce")
-    private String getNonce(HttpServletRequest request) {
+    public String getNonce(HttpServletRequest request) {
         //todo 权限校验
 
         ZSetOperations ops = redisUtils.getStringRedisTemplate().opsForZSet();
@@ -47,17 +47,17 @@ public class NameController {
     }
 
     @GetMapping
-    private String getNameByGet(String username) {
+    public String getNameByGet(String username) {
         return "GET :: " + username;
     }
 
     @PostMapping
-    private String getNameByPost(@RequestBody String username) {
+    public String getNameByPost(@RequestBody String username) {
         return "POST PARAM  " + username;
     }
 
     @PostMapping("/json")
-    private String getNameByPost(@RequestBody User user, HttpServletRequest request) {
+    public String getNameByPost(@RequestBody User user, HttpServletRequest request) {
         String accessKey = request.getHeader("accessKey");
         String nonce = request.getHeader("nonce");
         String timestamp = request.getHeader("timestamp");
