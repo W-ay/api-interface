@@ -30,7 +30,7 @@ public class PoemSchedule {
         try {
             CSVUtils.updatePoems(filePath);
         } catch (FileNotFoundException e) {
-            log.error("文件未找到");
+            log.error("文件未找到,路径为{}",filePath);
             log.error(e.getMessage());
             throw new RuntimeException(e);
         }
