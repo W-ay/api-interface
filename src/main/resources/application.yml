@@ -3,17 +3,17 @@ server:
     context-path: /api2
   port: 8123
 
-spring:
-  redis:
-    host: localhost
-    port: 6379
-#    password: redispwd123
-    jedis:
-      pool:
-        min-idle: 0
-        max-idle: 8
-        max-wait: 50000
-        max-active: 8
+#spring:
+#  redis:
+#    host: localhost
+#    port: 6379
+##    password: redispwd123
+#    jedis:
+#      pool:
+#        min-idle: 0
+#        max-idle: 8
+#        max-wait: 50000
+#        max-active: 8
 
 dubbo:
   application:

@@ -4,7 +4,6 @@ import cn.hutool.core.text.csv.CsvData;
 import cn.hutool.core.text.csv.CsvReader;
 import cn.hutool.core.text.csv.CsvRow;
 import cn.hutool.core.text.csv.CsvUtil;
-import jdk.internal.util.xml.impl.ReaderUTF8;
 import lombok.Getter;
 
 import java.io.File;

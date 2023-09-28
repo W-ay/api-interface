@@ -10,21 +10,21 @@ import org.springframework.stereotype.Component;
  *
  * @author Way
  */
-@Component
-public class RedisUtils {
-    private final StringRedisTemplate stringRedisTemplate;
-    private final RedisTemplate redisTemplate;
-
-    public RedisUtils(StringRedisTemplate stringRedisTemplate, RedisTemplate redisTemplate) {
-        this.stringRedisTemplate = stringRedisTemplate;
-        this.redisTemplate = redisTemplate;
-    }
-
-    public  StringRedisTemplate getStringRedisTemplate(){
-        return stringRedisTemplate;
-    }
-
-    public  RedisTemplate getRedisTemplate(){
-        return redisTemplate;
-    }
-}
+//@Component
+//public class RedisUtils {
+//    private final StringRedisTemplate stringRedisTemplate;
+//    private final RedisTemplate redisTemplate;
+//
+//    public RedisUtils(StringRedisTemplate stringRedisTemplate, RedisTemplate redisTemplate) {
+//        this.stringRedisTemplate = stringRedisTemplate;
+//        this.redisTemplate = redisTemplate;
+//    }
+//
+//    public  StringRedisTemplate getStringRedisTemplate(){
+//        return stringRedisTemplate;
+//    }
+//
+//    public  RedisTemplate getRedisTemplate(){
+//        return redisTemplate;
+//    }
+//}

@@ -1,7 +1,10 @@
+ini:
+  server-ip: localhost
+  poem-path: "assets/poem.csv"
 
 spring:
   redis:
-    host: localhost
+    host: ${ini.server-ip}
     port: 6379
 #    password: redispwd123
     jedis:
@@ -18,7 +21,5 @@ dubbo:
     name: dubbo
     port: -1
   registry:
-    address: nacos://localhost:8848
+    address: nacos://${ini.server-ip}:8848
 
-ini:
-  poem-path: "assets/poem.csv"
